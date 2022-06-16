@@ -1,0 +1,15 @@
+# file: .github/workflows/hello-world.yml
+name: ci
+# on – определяет события, которые запускают воркфлоу
+on: push
+jobs:
+  # build – произвольно выбранное имя задания
+  # их может быть больше одного
+  ci:
+    # операционная система для работы воркфлоу
+    runs-on: ubuntu-latest
+    steps:
+      - run: make setup
+      - run: make start
+      - run: make test
+      - run: make lint
